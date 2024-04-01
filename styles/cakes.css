@@ -1,0 +1,268 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* This will center the content vertically */
+    align-items: center; /* This will center the content horizontally */
+    height: 100vh; /* Use the full height of the viewport */
+    margin: 0;
+    padding: 0;
+    font-family: 'Arimo', sans-serif;
+    background-image: url('../assets/pickCake.png');
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#welcomeMessage {
+    width: 100%; /* Take the full width of the container */
+    text-align: center; /* Center the text horizontally */
+    font-family: 'Poppins', sans-serif; /* Use the Arimo font */
+    font-weight: bold; /* Make the text bold */
+    color: white; /* Set the text color to white */
+    padding: 20px 0; /* Add some padding above and below the text */
+    background-color: transparent; /* Optional: in case you want a different background */
+    font-size: 36px; /* Adjust the font size as needed */
+    position: fixed; /* Fixed at the top */
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+}
+
+#cakes-container {
+    width: 100%; /* Ensure the container takes the full width */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0px;
+    /* Add padding-top to bring the content down */
+    padding-top: 23vh; /* You can adjust this value to move your grid down */
+}
+
+.cake {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.cake-image {
+    width: 100%; /* This makes the image take up 100% of the .cake width */
+    height: auto; /* This maintains the aspect ratio of the image */
+    margin-bottom: 5px; /* Space between image and button */
+    transition: transform 0.3s ease; /* Smooth transition for scaling */
+}
+
+.cake-image:hover {
+  transform: scale(1.05); /* Scale the image up on hover */
+  opacity: 0.8;
+}
+
+.cake button {
+    padding: 5px 20px; /* Adjust as needed */
+    margin-top: auto; /* This pushes the button to the bottom of the flex container */
+    border-radius: 30px;
+    border: none;
+    background-color: #AF4434;
+    color: white;
+    font-family: 'Poppins', 'sans-serif';
+    font-weight: bold;
+    width: auto; /* Let the button size itself based on its content */
+}
+
+.cake button:hover {
+    background-color: white; 
+    color: #AF4434; 
+}
+
+.popup {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-title {
+    font-family: 'Arimo', sans-serif;
+    font-size: 35px;
+    font-weight: bold;
+    color: white;
+    padding: 10px;
+}
+
+.cart-title{
+    font-family: 'Arimo', sans-serif;
+    font-size: 35px;
+    font-weight: bold;
+    color: white;
+    padding: 10px;
+}
+
+#cart-items{
+    font-family: 'Arimo', sans-serif;
+    text-transform: uppercase;
+    color: white;
+    text-align: left;
+    
+}
+#clear-cart, #checkout {
+    background-color: #EB91CC;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 20px;
+    border: none;
+}
+
+#clear-cart:hover, #checkout:hover {
+    background-color: white;
+    color: #EB91CC;
+}
+.popup-content {
+    background: #F36544;
+    padding: 20px;
+    text-align: center;
+    border-radius: 30px;
+}
+
+.close {
+    cursor: pointer;
+    position: absolute;
+    color: white;
+    top: 10px;
+    right: 10px;
+    font-size: 34px;
+}
+
+#add-to-cart, #go-back {
+    background-color: #EB91CC;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 20px;
+    border: none;
+}
+
+#add-to-cart:hover, #go-back:hover {
+    background-color: white;
+    color: #EB91CC;
+    cursor: pointer;
+
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+#quantity-section {
+    margin: 20px;
+    color: white;
+}
+
+#complete-order {
+    padding: 10px 20px;
+    background-color: #F36544;
+    color: white;
+    font-family: 'Poppins', 'sans-serif';
+    font-weight: bold; 
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+#complete-order:hover {
+    background-color: white;
+    color: #F36544;
+}
+
+#complete-order {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+
+#cart-icon {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 100px;
+    height: auto;
+    cursor: pointer;
+
+}
+
+.cart-count {
+    position: absolute;
+    top: 40px; 
+    right: 30px; 
+    background-color: #F36544;
+    font-family: 'Poppins', 'sans-serif';
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 14px;
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  border-radius: 30px;
+}
+
+.modal-content {
+    background-color: #EB91CC;
+    color: white;
+    margin: auto; /* Center the modal on the screen */
+    position: relative; /* Needed for absolute positioning of children */
+    top: 50%; /* Push down to 50% of the parent's height */
+    transform: translateY(-50%); /* Pull back up by 50% of its own height to center */
+    padding: 20px;
+    border: 5px solid white;
+    font-family: 'Poppins', 'sans serif';
+    font-weight: bold;
+    width: 50%; /* Adjust width as needed */
+    max-width: 400px; /* Set a max-width for larger screens */
+    text-align: center; /* Center text horizontally */
+    border-radius: 10px; /* Optional: rounds the corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: adds a subtle shadow */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+  }
+  
+  .close-button {
+    color: white;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    padding: 10px; /* Give some space around the close button */
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+
+.close-button:hover,
+.close-button:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+

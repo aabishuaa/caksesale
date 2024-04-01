@@ -1,0 +1,42 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    background-image: url('../assets/finalpage.png'); /* Replace with the actual path to your background image */
+    background-size: cover; /* Cover the entire page */
+    background-position: center; /* Center the background image */
+    z-index: 1000;
+}
+
+#background-video {
+    position: fixed; /* Use fixed to keep it in view or absolute for within a container */
+    right: 0; /* Align to the right */
+    bottom: 0; /* Align to the bottom */
+    width: 70vw; /* Increase the size to 30% of the viewport width */
+    height: auto; /* Maintain aspect ratio */
+    z-index: -1; /* Keep it in the background */
+}
+
+.back-to-home-btn {
+    position: fixed; /* Fixed position relative to the viewport */
+    bottom: 20px; /* 20px from the bottom */
+    left: 90px; /* 20px from the left */
+    padding: 10px 20px; /* Padding inside the button */
+    background-color: #F36544; /* Background color */
+    color: white; /* Text color */
+    font-family: 'Arimo', sans-serif;
+    text-decoration: none; /* Remove underline from link */
+    border: none; /* No border */
+    border-radius: 25px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    z-index: 1000; /* Ensure it's above other items */
+}
+
+.back-to-home-btn:hover {
+    background-color: white; /* Slightly darker on hover */
+    color: #F36544;
+}

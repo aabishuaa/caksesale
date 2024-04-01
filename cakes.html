@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cake Selection - Abishua's Cake Sale</title>
+    <link href="https://fonts.googleapis.com/css?family=Arimo&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/cakes.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+
+</head>
+<body>
+    <div id="welcomeMessage"></div>
+<button id="complete-order" class="hidden" onclick="completeOrder()">Complete Order</button>
+<img src="assets/cartimage.png" alt="Cart" id="cart-icon" onclick="showCartPopup()">
+<span id="cart-count" class="cart-count">0</span>
+
+
+
+
+
+
+<div id="cakes-container">
+    <!-- Example cake item -->
+    <div class="cake">
+        <img src="assets/plain-sugar-&-spice.png" alt="Plain Sugar & Spice" class="cake-image" onclick="showPopup('Plain Sugar & Spice')">
+        <button onclick="showPopup('Plain Sugar & Spice')">Plain Sugar & Spice</button>
+    </div>
+    <div class="cake">
+        <img src="assets/choco-mocha.png" alt="Chocolate Cake" class="cake-image" onclick="showPopup('Choco Mocha')">
+        <button onclick="showPopup('Choco Mocha')">Choco Mocha</button>
+    </div>
+    <div class="cake">
+        <img src="assets/red-velvet.png" alt="Red Velvet Cake" class="cake-image" onclick="showPopup('Red Velvet')">
+        <button onclick="showPopup('Red Velvet')">Red Velvet</button>
+    </div>
+    <div class="cake">
+        <img src="assets/cheese-cake.png" alt="Cheese Cake" class="cake-image" onclick="showPopup('Cheese Cake')">
+        <button onclick="showPopup('Cheese Cake')">Cheese Cake</button>
+    </div>
+    <!-- Cart Popup Structure -->
+    <div id="cart-popup" class="popup" style="display: none;">
+        <div class="popup-content">
+            <span class="close" onclick="hideCartPopup()">&times;</span>
+            <div id="cart-title" class="cart-title">Your Cart</div>
+            <div id="cart-items"></div>
+            <div class="button-container">
+                <button id="checkout" onclick="completeCheckout()">Checkout</button>
+                <button id="clear-cart" onclick="clearCart()">Clear Cart</button> <!-- Clear Cart Button -->
+            </div>
+        </div>
+    </div>
+    
+
+    <!-- Popup structure (initially hidden) -->
+    <div id="popup" class="popup" style="display:none;">
+        <div class="popup-content">
+            <span class="close" onclick="hidePopup()">&times;</span>
+            <div id="popup-title" class="popup-title">Nice Choice!</div>
+            <img id="popup-image" src="" alt="Selected Cake">
+            <div id="quantity-section">
+                <button onclick="changeQuantity(-1)">-</button>
+                <span id="quantity">1</span>
+                <button onclick="changeQuantity(1)">+</button>
+            </div>
+            <div class="button-container">
+                <button id="go-back" onclick="hidePopup()">Go Back</button>
+                <button id="add-to-cart" onclick="addToCart()">Add to Cart</button>
+            </div>
+            
+        </div>
+    </div>
+</div>
+    <!-- Modal -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close-button">×</span>
+      <p id="modal-text"></p>
+    </div>
+  </div>
+  
+<script src="javascript/cakes.js"></script>
+</body>
+</html>

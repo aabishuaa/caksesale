@@ -1,0 +1,70 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+}
+
+.order-page {
+    background-image: url('../assets/name.png'); /* Path to your background image */
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    padding: 20px;
+    font-size: 25px;
+    font-weight: bold;
+    background-color: #EB91CC;
+    border: none; /* Updated this to 'none' as it's a more common value */
+    border-radius: 35px; /* Rounded borders */
+    text-transform: uppercase;
+    position: relative;
+    top: 70%;
+    left: 3%;
+    width: 670px;
+    height: 77px;
+    color: white; /* This line sets the text color to white */
+}
+
+
+input[type="text"]::placeholder {
+    color: white; /* Placeholder color */
+    opacity: 1;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+}
+
+.next-page-btn {
+    background-color: #EB91CC;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-size: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    position: relative;
+    top: 215%;
+    left: -15%;
+    width: 153px;
+    height: 77px;
+}
+
+.next-page-btn:hover {
+    background-color: white;
+    color: #EB91CC;
+}
+
+/* Add further styles if necessary */
